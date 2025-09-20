@@ -1,0 +1,54 @@
+1) Remove an existing remote repo and add a new one
+   #git remote -v 
+   #git remote remove origin
+   #git remote add origin git@github.com:maze0207-byte/new-repo.git
+2) Create 3 branches (dev, test, pre-prod)
+-------------------- create branches locally
+    #git branch dev
+    #git branch test
+    #git branch pre-prod
+    #git branch
+3) Create some files in the dev branch and push
+
+    #git switch dev
+    #echo "hello file1" > file1.txt
+    #echo "hello file2" > file2.txt
+    #git add file1.txt file2.txt
+    #git commit -m "Add file1 and file2 on dev"
+    #git push -u origin dev
+4) Merge dev branch into main
+
+    #git switch main
+    #git fetch origin
+    #git pull origin main
+    #git merge --no-ff dev -m "Merge dev into main"
+    #git push origin main
+5) Delete the dev branch
+    #git branch -d dev  
+    #git push origin --delete dev
+6) Create 3 files and add them to staging with
+    #echo "file_1" > file_1.txt
+    #echo "file_2" > file_2.txt
+    #echo "file_3" > file_3.txt
+    #git add .
+    #git status --short
+7) Remove 1 file from staging and commit the other file
+    #git restore --staged file_2.txt
+    #git status --short
+    #git commit -m "Add file_1.txt and file_2.txt"
+8) Delete the last 2 commits and get back to staging
+    #git reset --soft HEAD~2
+    #git status --short
+9)Install nginx & change the default web page
+    #sudo apt update
+    #sudo apt install -y nginx
+    #sudo systemctl start nginx
+    #sudo systemctl enable nginx
+    #sudo systemctl status nginx
+
+
+
+
+
+
+
